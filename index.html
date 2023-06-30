@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário HTML5</title>
+ 
+  <style>
+    body{
+        font-family: sans-serif;
+        background-image: url(https://img.freepik.com/vetores-gratis/copie-o-fundo-digital-dos-circuitos-azuis-do-espaco_23-2148821699.jpg?w=900&t=st=1688134412~exp=1688135012~hmac=0d49ca36c5ecc19451465b9f43627a2e68d172089163e60d7f0caccb2f530dcf);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1{
+        color: #2d787e;
+    }
+    /* Estilizando os campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 240px;
+  
+}
+
+/* Estilizando o botão de envio */
+#submit {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Adicionando margem entre os campos */
+input,
+textarea,
+button {
+  margin-bottom: 30px;
+  
+}
+
+/* Estilizando o formulário */
+form {
+  max-width: 350px;
+  margin: auto;
+  margin-top: 200px;
+  border: 2px solid lightgray;
+  padding: 30px;
+  background-color: lightblue;
+  border-radius: 6px;
+  text-align:center;
+  margin-bottom: 10px;
+  
+}
+
+  </style>
+</head>
+<body>
+   
+  <form id="myform" method="get">
+    
+    <h1>Cadastre-se</h1>
+    <label for="nome"></label>
+    <input type="text" id="nome" name="nome" placeholder="Nome" required> <br>
+    
+    <label for="email"></label>
+    <input type="email" id="email" name="email" placeholder="Email" required> <br>
+    
+    <label for="senha"></label>
+    <input type="password" id="senha" name="senha" placeholder="Senha" required> <br>
+    
+    <input type="submit" value="Enviar" onclick="enviarFormulario()">
+  </form>
+  <script>
+    function enviarFormulario() {
+      document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // impede o envio do formulário
+
+  // Coletar os valores inseridos pelo usuário
+  var nome = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var senha = document.getElementById("senha").value;
+
+  // Realizar a validação dos campos
+  if (name === '' || email === '' || senha===") {
+    alert("Por favor, preencha todos os campos");
+    return;
+  }
+
+  // Enviar os valores para o servidor (simulado aqui com um alerta)
+  alert("Valores enviados: \nName: " + name + "\nemail: " + email"\nsenha: " + senha);
+
+  // Limpar os campos do formulário
+  document.getElementById("name").value = '';
+  document.getElementById("email").value = '';
+  document.getElementById("senha").value = '';
+});
+      alert("Formulário enviado com sucesso!");
+    
+  </script>
+
+</body>
+</html>
